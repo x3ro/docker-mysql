@@ -1,4 +1,4 @@
-FROM stackbrew/ubuntu:12.04
+FROM ubuntu:14.04
 MAINTAINER Ben Firshman <ben@orchardup.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,6 +9,7 @@ RUN chmod 664 /etc/mysql/conf.d/my.cnf
 ADD run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
 
-VOLUME ["/var/lib/mysql"]
+# Mounted to host system instead of using a volume
+# VOLUME ["/var/lib/mysql"]
 EXPOSE 3306
 CMD ["/usr/local/bin/run"]
