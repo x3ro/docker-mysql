@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:stable
 MAINTAINER Ben Firshman <ben@orchardup.com>
 
 ENV DEBIAN_FRONTEND noninteractive
